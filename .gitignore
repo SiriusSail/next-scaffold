@@ -1,0 +1,14 @@
+/node_modules
+/coverage
+/logs
+/.next
+/bundles
+/dist
+.dev/
+.DS_Store
+.env
+npm-debug.log*
+.idea/
+.vscode/
+.dev/
+*.missing.json
