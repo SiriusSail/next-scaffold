@@ -4,9 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "dev": "env-cmd ./.env.dev node server.js",
-    "build": "webpack --config webpack.config.js",
-    "start": "cross-env HELLO_MSG=123 && node server.js"
+    "build": "webpack --config static/webpack.config.js",
+    "dev": "webpack --config static/webpack.config.js && cross-env REDIS_LINK=192.168.0.10 NODE_JOB=BUILD node server.js",
+    "test": "cross-env HELLO_MSG=123 NODE_JOB=BUILD node server.js"
   },
   "keywords": [],
   "author": "",
@@ -31,8 +31,16 @@
     "webpack": "^4.41.2"
   },
   "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
     "cross-env": "^6.0.3",
+    "css-loader": "^3.3.0",
     "express": "^4.17.1",
-    "webpack-cli": "^3.3.10"
+    "file-loader": "^5.0.2",
+    "js-to-less-var-loader": "^1.0.4",
+    "less": "^3.10.3",
+    "less-loader": "^5.0.0",
+    "style-loader": "^1.0.1",
+    "webpack-cli": "^3.3.10",
+    "webpack-manifest-plugin": "^2.2.0"
   }
 }

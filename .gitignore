@@ -4,6 +4,7 @@
 /.next
 /bundles
 /dist
+/static/dist
 .dev/
 .DS_Store
 .env

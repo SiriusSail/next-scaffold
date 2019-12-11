@@ -10,7 +10,6 @@ class MyApp extends App {
         let pageProps;
         let isPc;
         if(isServer) {
-            console.log("HELLO_MSG="+process.env.HELLO_MSG);
             isPc = isPcOrMobile(ctx.req).isPc;
             ctx.res.cookie('isPc', isPc);
         }else{

@@ -10,7 +10,7 @@ import Document, { Head, Main, NextScript } from 'next/document';
 export default class extends Document {
   render() {
     // 环境变量
-    // const {  } = process.env;
+    const { isPc } = this.props.__NEXT_DATA__.props;
     return (
       <html lang="en">
         <Head>
@@ -26,6 +26,7 @@ export default class extends Document {
           {/*<link rel="dns-prefetch" href={`${S3_BUCKET}`} />*/}
           {/*<link rel="dns-prefetch" href={`${IMG_HOST}`} />*/}
           <meta name="protected" content="true" />
+          <script type="text/javascript" src={`/static/dist/${isPc?"pcStyle":"mStyle"}.bundle.js`} async></script>
           <script type="text/javascript" dangerouslySetInnerHTML={{
             __html: `
 
@@ -46,10 +47,11 @@ export default class extends Document {
         </Head>
         <body>
 
-        <script type="text/javascript" dangerouslySetInnerHTML={{
-          __html: `
-            window.process = {};
-          `}} ></script>
+        {/*<script type="text/javascript" dangerouslySetInnerHTML={{*/}
+        {/*  __html: `*/}
+        {/*    window.process = {};*/}
+        {/*    window.process.env = ${JSON.stringify(FONT_END_ENV())};*/}
+        {/*  `}} ></script>*/}
           < Main />
           < NextScript />
         </body>

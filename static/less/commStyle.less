@@ -1,0 +1,154 @@
+// 通用变量和函数的css，定位不写在这
+// 颜色命名，写16进制颜色的简写如
+/*
+@f = #fff;
+*/
+
+@f: #fff;
+@0: #000;
+@3: #333;
+@6: #666;
+@9: #999;
+@c: #CCC;
+@f-blue: #00a1e0;
+@f-yelo: #ffa800;
+@45: #454545;
+@f1: #F1F1F1;
+@f4: #F4F4F4;
+@f6: #F6F6F6;
+@f0: #FF0000;
+@dd: #DDD;
+@29c: #29C5DC;
+@46: #464646;
+@67: #676767;
+@9a: #9A9A9A;
+@cb: #CBCBCB;
+@c2: #C2C2C2;
+@d8: #D8D8D8;
+// size
+@20: .2rem;
+@24: .24rem;
+@26: .26rem;
+@32: .32rem;
+@36: .36rem;
+// 函数
+
+.transition(@data) {
+  //.transition(all  0.15s  linear);
+  transition: @data;
+  -ms-transition: @data; // IE 9
+  -moz-transition: @data; // Firefox
+  -webkit-transition: @data; // Safari �� Chrome
+  -o-transition: @data; // Opera
+}
+
+.transform(@data) {
+  // rotate(180deg) 旋转
+  // translate(x,y)	定义 2D 转换
+  // translate3d(x,y,z)	定义 3D 转换
+  // translateX(x)	定义转换，只是用 X 轴的值
+  // scale(x,y)	定义 2D 缩放转换
+  // scale3d(x,y,z)	定义 3D 缩放转换
+  // scaleX(x)	通过设置 X 轴的值来定义缩放转换
+  // rotate(angle)	定义 2D 旋转，在参数中规定角度
+  // rotate3d(x,y,z,angle)	定义 3D 旋转
+  // rotateX(angle)	定义沿着 X 轴的 3D 旋转
+  // skew(x-angle,y-angle)	定义沿着 X 和 Y 轴的 2D 倾斜转换
+  // skewX(angle)	定义沿着 X 轴的 2D 倾斜转换
+  // perspective(n)	为 3D 转换元素定义透视视图
+  transform: @data;
+  -ms-transform: @data; // IE 9
+  -moz-transform: @data; // Firefox
+  -webkit-transform: @data; // Safari �� Chrome
+  -o-transform: @data; // Opera
+}
+
+.specific_distribution_l(@data) {
+  width: 100%;
+  padding-left: @data;
+  margin-left: -@data;
+}
+
+.specific_distribution_r(@data) {
+  width: 100%;
+  padding-right: @data;
+  margin-right: -@data;
+}
+
+.bt(@crl1 , @crl2 , @bcrl1, @bcrl2) {
+  background-color: @bcrl1;
+  color: @crl1;
+  &:hover {
+    background-color: @bcrl2;
+    color: @crl2;
+  }
+}
+
+.bc-img(@url;
+@x;
+@y) {
+  width: @x;
+  height: @y;
+  background: url(@url) no-repeat;
+  background-size: @x @y;
+}
+
+.box-shadow(@data) {
+  //box-shadow(2px 2px 5px #333333)
+  -moz-box-shadow: @data;
+  -webkit-box-shadow: @data;
+  box-shadow: @data;
+}
+
+.triangle-top(@color;
+@size) {
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: solid @size transparent;
+  border-left: solid @size transparent;
+  border-right: solid @size transparent;
+  border-bottom: solid @size @color;
+}
+
+.triangle-bottom(@color;
+@size) {
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: solid @size @color ;
+  border-left: solid @size transparent;
+  border-right: solid @size transparent;
+  border-bottom: solid @size transparent;
+}
+
+.animation(@data){
+  //animation: myfirst 5s;
+  animation: @data;
+  -moz-animation: @data;	// Firefox
+  -webkit-animation: @data;	// Safari 和 Chrome
+  -o-animation: @data;	// Opera
+}
+
+// this document is used to var layout function & constant
+// 定位
+.position(
+  @location:relative;
+  @l: auto;
+  @t: auto;
+  @r: auto;
+  @b: auto;
+) {
+  position: @location;
+  left: @l;
+  top: @t;
+  right: @r;
+  bottom: @b;
+}
+
+// flex
+.flex(@line:flex-start;@row:center){
+  display: flex;
+  justify-content: @line;
+  align-items: @row;
+}
