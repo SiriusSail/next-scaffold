@@ -3,6 +3,8 @@ import { getCookie, isServer, getUrlData } from './../lib/commonService';
 import PcCon from "../pcCommComponents/PcCon";
 import MobileCon from "../commComponents/MobileCon";
 const isPcOrMobile = require("../nodeApi/isPc");
+import { Provider } from 'react-redux';
+import withReduxStore from '../lib/with-redux-store';
 // import 'antd/dist/antd.css'
 class MyApp extends App {
 
@@ -27,10 +29,10 @@ class MyApp extends App {
     };
 
     render() {
-        const { Component, pageProps, isPc } = this.props;
+        const { Component, pageProps, isPc, reduxStore } = this.props;
 
         return (
-            <div>
+            <Provider store={reduxStore}>
                 {isPc?
                     <PcCon>
                         <Component {...this.props}/>
@@ -39,9 +41,9 @@ class MyApp extends App {
                         <Component {...this.props}/>
                     </MobileCon> }
 
-            </div>
+            </Provider>
         )
     }
 }
 
-export default MyApp
+export default withReduxStore(MyApp);
