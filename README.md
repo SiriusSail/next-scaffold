@@ -42,39 +42,39 @@ react（页面）+redux（数据管理）+next.js（后台渲染框架、路由�
 > 当页面初始化加载时，`getInitialProps`只会加载在服务端。只有当路由跳转（`Link`组件跳转或 API 方法跳转）时，客户端才会执行`getInitialProps`。
 
 `getInitialProps`入参对象的属性如下：
-
-- `pathname` - URL 的 path 部分
-- `query` - URL 的 query 部分，并被解析成对象
-- `asPath` - 显示在浏览器中的实际路径（包含查询部分），为`String`类型
-- `req` - HTTP 请求对象 (只有服务器端有)
-- `res` - HTTP 返回对象 (只有服务器端有)
-- `jsonPageRes` - 获取数据响应对象(只有客户端有)
-- `err` - 渲染过程中的任何错误
+> 
+> - `pathname` - URL 的 path 部分
+> - `query` - URL 的 query 部分，并被解析成对象
+> - `asPath` - 显示在浏览器中的实际路径（包含查询部分），为`String`类型
+> - `req` - HTTP 请求对象 (只有服务器端有)
+> - `res` - HTTP 返回对象 (只有服务器端有)
+> - `jsonPageRes` - 获取数据响应对象(只有客户端有)
+> - `err` - 渲染过程中的任何错误
 
 **路由**
 
-1、``<Link>``
+> ``<Link>``
 
-2、命令式 ``next/router``
+> 命令式 ``next/router``
 
 `Router`API 如下：
 
-- `route` - 当前路由的`String`类型
-- `pathname` - 不包含查询内容的当前路径，为`String`类型
-- `query` - 查询内容，被解析成`Object`类型. 默认为`{}`
-- `asPath` - 展现在浏览器上的实际路径，包含查询内容，为`String`类型
-- `push(url, as=url)` - 页面渲染第一个参数 url 的页面，浏览器栏显示的是第二个参数 url
-- `replace(url, as=url)` - performs a `replaceState` call with the given url
-- `beforePopState(cb=function)` - 在路由器处理事件之前拦截.
+> - `route` - 当前路由的`String`类型
+> - `pathname` - 不包含查询内容的当前路径，为`String`类型
+> - `query` - 查询内容，被解析成`Object`类型. 默认为`{}`
+> - `asPath` - 展现在浏览器上的实际路径，包含查询内容，为`String`类型
+> - `push(url, as=url)` - 页面渲染第一个参数 url 的页面，浏览器栏显示的是第二个参数 url
+> - `replace(url, as=url)` - performs a `replaceState` call with the given url
+> - `beforePopState(cb=function)` - 在路由器处理事件之前拦截.
 
 路由事件
 
-- `routeChangeStart(url)` - 路由开始切换时触发
-- `routeChangeComplete(url)` - 完成路由切换时触发
-- `routeChangeError(err, url)` - 路由切换报错时触发
-- `beforeHistoryChange(url)` - 浏览器 history 模式开始切换时触发
-- `hashChangeStart(url)` - 开始切换 hash 值但是没有切换页面路由时触发
-- `hashChangeComplete(url)` - 完成切换 hash 值但是没有切换页面路由时触发
+> - `routeChangeStart(url)` - 路由开始切换时触发
+> - `routeChangeComplete(url)` - 完成路由切换时触发
+> - `routeChangeError(err, url)` - 路由切换报错时触发
+> - `beforeHistoryChange(url)` - 浏览器 history 模式开始切换时触发
+> - `hashChangeStart(url)` - 开始切换 hash 值但是没有切换页面路由时触发
+> - `hashChangeComplete(url)` - 完成切换 hash 值但是没有切换页面路由时触发
 
 ### 项目结构
 
