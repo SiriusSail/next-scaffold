@@ -1,5 +1,7 @@
 import React from 'react';
 import Document, { Head, Main, NextScript } from 'next/document';
+import { BASE_BASE_URL } from '../config/api';
+import FONT_END_ENV from '../font_end_env.js';
 /*
  * 通用head
  * @export
@@ -14,7 +16,7 @@ export default class extends Document {
     return (
       <html lang="en">
         <Head>
-          {/*<base href={BASE_BASE_URL} />*/}
+          <base href={BASE_BASE_URL} />
           <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover,user-scalable=no" />
           <meta name="format-detection" content="telephone=no" />
           {/* 开启dns 预解析 */}
@@ -47,11 +49,11 @@ export default class extends Document {
         </Head>
         <body>
 
-        {/*<script type="text/javascript" dangerouslySetInnerHTML={{*/}
-        {/*  __html: `*/}
-        {/*    window.process = {};*/}
-        {/*    window.process.env = ${JSON.stringify(FONT_END_ENV())};*/}
-        {/*  `}} ></script>*/}
+        <script type="text/javascript" dangerouslySetInnerHTML={{
+          __html: `
+            window.process = {};
+            window.process.env = ${JSON.stringify(FONT_END_ENV())};
+          `}} ></script>
           < Main />
           < NextScript />
         </body>
