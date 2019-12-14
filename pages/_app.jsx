@@ -1,5 +1,5 @@
 import App from 'next/app';
-import { getCookie, isServer, getUrlData } from './../lib/commonService';
+import { getCookie, isServer, getUrlData } from '../hoc/commonService';
 import PcCon from "../pcCommComponents/PcCon";
 import MobileCon from "../commComponents/MobileCon";
 const isPcOrMobile = require("../nodeApi/isPc");

@@ -1,3 +1,5 @@
+/** 重写router **/
+
 import router, {RouterProps} from 'next/router';
 import * as route from 'next/router'; 
 import {oldPathNewMap, conversion} from './withLinkCore';

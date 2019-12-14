@@ -1,6 +1,6 @@
-import instance from '../../lib/axiosCore';
+import instance from '../../hoc/axiosCore';
 import { PROCESS} from '../../config/reduxConstant';
-import { isServer } from './../../lib/commonService';
+import { isServer } from '../../hoc/commonService';
 function isClient(){
     return isServer;
 }

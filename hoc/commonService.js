@@ -1,7 +1,7 @@
-import Router from '../hoc/withRouterCore.js';
+import Router from './withRouterCore.js';
 import * as cookies from "js-cookie";
 import * as localforage from "localforage";
-import _ from "../lib/lodashCore";
+import _ from "./lodashCore";
 
 export const isServer = typeof window === "undefined";
 

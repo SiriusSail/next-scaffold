@@ -1,4 +1,4 @@
-/**自定义路由。以及路由别名**/
+/**自定义Link。以及路由别名组件**/
 
 import NextLink from "next/link";
 

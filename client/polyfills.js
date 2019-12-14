@@ -1,6 +1,6 @@
 // polyfill.js&& lodash
 
-import {isServer} from '../lib/commonService';
+import {isServer} from '../hoc/commonService';
 /* eslint no-extend-native: 0 */
 import includes from 'core-js/fn/array/virtual/includes';
 import strIncludes from 'core-js/fn/string/virtual/includes';
